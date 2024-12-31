@@ -1,0 +1,23 @@
+diff --git a/src/Controller/ReportController.php b/src/Controller/ReportController.php
+index a30ea99..15c8a17 100755
+--- a/src/Controller/ReportController.php
++++ b/src/Controller/ReportController.php
+@@ -215,12 +215,12 @@ class ReportController extends ControllerBase {
+       'read_write' => [
+         'title' => $this->t('Read/Write'),
+         'value' => $this->t('@read read (@percent_read%), @write written (@percent_write%), @commands commands in @connections connections.', [
+-          '@read' => static::formatSize($info['total_net_output_bytes'] ?? $info['Stats']['total_net_output_bytes']),
+-          '@percent_read' => round(100 / (($info['total_net_output_bytes'] ?? $info['Stats']['total_net_output_bytes']) + ($info['total_net_input_bytes'] ?? $info['Stats']['total_net_input_bytes'])) * ($info['total_net_output_bytes'] ?? $info['Stats']['total_net_output_bytes'])),
+-          '@write' => static::formatSize($info['total_net_input_bytes'] ?? $info['Stats']['total_net_input_bytes']),
+-          '@percent_write' => round(100 / (($info['total_net_output_bytes'] ?? $info['Stats']['total_net_output_bytes']) + ($info['total_net_input_bytes'] ?? $info['Stats']['total_net_input_bytes'])) * ($info['total_net_input_bytes'] ?? $info['Stats']['total_net_input_bytes'])),
+-          '@commands' => $info['total_commands_processed'] ?? $info['Stats']['total_commands_processed'],
+-          '@connections' => $info['total_connections_received'] ?? $info['Stats']['total_connections_received'],
++          // '@read' => static::formatSize($info['total_net_output_bytes'] ?? $info['Stats']['total_net_output_bytes']),
++          // '@percent_read' => round(100 / (($info['total_net_output_bytes'] ?? $info['Stats']['total_net_output_bytes']) + ($info['total_net_input_bytes'] ?? $info['Stats']['total_net_input_bytes'])) * ($info['total_net_output_bytes'] ?? $info['Stats']['total_net_output_bytes'])),
++          // '@write' => static::formatSize($info['total_net_input_bytes'] ?? $info['Stats']['total_net_input_bytes']),
++          // '@percent_write' => round(100 / (($info['total_net_output_bytes'] ?? $info['Stats']['total_net_output_bytes']) + ($info['total_net_input_bytes'] ?? $info['Stats']['total_net_input_bytes'])) * ($info['total_net_input_bytes'] ?? $info['Stats']['total_net_input_bytes'])),
++          // '@commands' => $info['total_commands_processed'] ?? $info['Stats']['total_commands_processed'],
++          // '@connections' => $info['total_connections_received'] ?? $info['Stats']['total_connections_received'],
+         ]),
+       ],
+       'per_bin' => [
